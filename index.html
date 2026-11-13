@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Laboratorio didattico sui tumori e la prevenzione per il Liceo Galilei di Verona, indirizzo sportivo.">
+<meta name="referrer" content="no-referrer">
+<title>Cellule in equilibrio | Liceo Galilei Verona</title>
+<link rel="icon" href="assets/logo-galilei.jpg">
+<link rel="stylesheet" href="style.css">
+<script defer src="contenuti.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai ai contenuti</a>
+<header class="top"><div class="wrap masthead">
+<a class="brand" href="#inizio"><img src="assets/logo-galilei.jpg" alt="" width="105" height="36"><span><strong>Liceo Galilei · Verona</strong><small>Indirizzo sportivo</small></span></a>
+<nav aria-label="Navigazione principale"><a href="#percorso">Percorso</a><a href="#laboratori">Laboratori</a><a href="#ripasso">Ripasso</a><a href="#fonti">Fonti</a></nav>
+</div></header>
+<main id="contenuto" tabindex="-1">
+<div class="wrap">
+<section id="inizio" class="hero" aria-labelledby="titolo">
+<div class="hero-copy"><p class="eyebrow">Biologia e salute</p><h1 id="titolo">Cellule in<br>equilibrio<span>.</span></h1>
+<p class="lead">Come nasce un tumore? Come si cura? Quali scelte riducono il rischio? Dalla cellula alla palestra, esplora le evidenze e mettile alla prova.</p>
+<div class="actions"><a class="button primary" href="#laboratori">Entra nei laboratori</a><a class="button secondary" href="#percorso">Esplora la teoria</a></div>
+<p class="credit">A cura del prof. Andrea Bertelli · Materiali di partenza di Fondazione AIRC</p></div>
+<div class="visual"><div class="visual-head"><span>MODELLO 3D · CELLULA</span><span id="model-state">Cellula con controlli integri</span></div>
+<canvas id="cell" role="img" aria-label="Modello tridimensionale schematico di una cellula con membrana, nucleo e materiale genetico">Cellula schematica con membrana, nucleo e materiale genetico.</canvas>
+<div class="visual-controls"><button id="turn-left" aria-label="Ruota a sinistra">↶</button><button id="turn-right" aria-label="Ruota a destra">↷</button><button id="spin" aria-pressed="false">Avvia rotazione</button><button id="model-switch" aria-pressed="false">Mostra clone</button></div><p>Trascina per ruotare · Schema illustrativo, fuori scala</p></div>
+</section>
+<aside class="fact"><strong>37<span>%</span></strong><div><h2>Una stima mondiale della quota prevenibile</h2><p>Nel 2022, circa 37 nuovi casi su 100 nel mondo erano attribuibili ai fattori modificabili esaminati da OMS e IARC. È una stima di popolazione. Il rischio di una singola persona dipende da molti fattori.</p><a href="#fonte-stima">Studio pubblicato nel 2026</a></div></aside>
+<section id="percorso" class="section"><div class="section-head"><p class="eyebrow">Teoria e schemi</p><h2>Dal DNA alla salute</h2><p>Leggi a blocchi, poi prova a ricostruire il processo usando lo schema.</p></div><div id="lessons"></div></section>
+<section id="laboratori" class="section"><div class="section-head"><p class="eyebrow">Laboratori</p><h2>Fai un’ipotesi. Mettila alla prova.</h2><p>Usa scenari inventati e confronta le tue risposte con la spiegazione.</p></div><div id="labs"></div></section>
+<section id="ripasso" class="section"><div class="section-head"><p class="eyebrow">Ripasso attivo</p><h2>Che cosa riesci a ricordare?</h2><p>Rispondi prima di riaprire la teoria. Torna su queste domande domani e la settimana prossima, spiegando a voce il perché.</p></div><div id="review" class="panel"></div><details class="panel"><summary>Carte di richiamo e attività in coppia</summary><div id="cards"></div><p>In coppia, una persona spiega un concetto per 45 secondi. L’altra propone un esempio e segnala un passaggio da chiarire. Poi scambiate i ruoli.</p></details></section>
+<section id="docente" class="section"><div class="section-head"><p class="eyebrow">Uso in classe</p><h2>Una lezione da 55 minuti</h2></div><div class="panel"><ol><li><strong>5 min · Recupero iniziale.</strong> Alla lavagna, distinguete fattore di rischio e causa sufficiente.</li><li><strong>10 min · Modello e teoria.</strong> Confrontate due esecuzioni del laboratorio Cellula e annotate che cosa è stato mantenuto costante.</li><li><strong>25 min · Laboratori a coppie.</strong> Alternate chi propone l’ipotesi e chi cerca la prova. Usate almeno un caso clinico e un caso di prevenzione.</li><li><strong>10 min · Trasferimento.</strong> Progettate su carta un messaggio per una squadra under 17 su sole, movimento o alimentazione. Indicate azione, motivo, fonte e limite.</li><li><strong>5 min · Ripasso.</strong> Chiudete la teoria e rispondete al quiz. Riprendete due domande nella lezione seguente.</li></ol><p>Le attività combinano recupero attivo, feedback esplicativo, esempi a passi e ripasso distribuito. La ricerca in classe sostiene l’uso del recupero e della distribuzione nel tempo. Le immagini affiancano le spiegazioni e i comandi manuali permettono di fermarsi sui passaggi. <a href="#fonte-apprendimento">Studi sull’apprendimento</a>.</p></div></section>
+<section id="fonti" class="section"><div class="section-head"><p class="eyebrow">Bibliografia</p><h2>Da dove arrivano le evidenze</h2></div><div id="sources" class="panel"></div></section>
+<section id="privacy" class="section"><div class="section-head"><p class="eyebrow">Informazioni sul sito</p><h2>Privacy, cookie e uso dell’IA</h2></div><div class="panel"><h3>Dati e cookie</h3><p>L’app funziona senza account, moduli di raccolta dati, profilazione, analytics o cookie propri. Risposte, punteggi e simulazioni restano nella memoria della pagina e si azzerano al ricaricamento. L’app non usa localStorage, sessionStorage o database. Logo, font e interazioni sono serviti insieme al sito. Il normale browser può memorizzare risorse nella sua cache.</p><p>Una volta pubblicato, il fornitore di hosting riceve dati tecnici necessari per consegnare e proteggere le pagine, come l’indirizzo IP, e può trattarli nei propri sistemi e log. La configurazione dell’hosting determina questi trattamenti. I riferimenti esterni si aprono solo su scelta dell’utente e seguono le informative dei rispettivi siti.</p><h3>Trasparenza sull’IA</h3><p>I testi, gli esercizi e il codice sono stati preparati con il supporto di IA generativa. I laboratori usano regole predefinite ed esempi fittizi. Durante la visita l’app non chiama servizi di IA e non raccoglie risposte o dati sanitari. Il materiale è per la didattica. Per decisioni personali su vaccini, screening o cure, rivolgersi ai professionisti sanitari.</p><p><a href="https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/9677876">Linee guida cookie del Garante</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689">Regolamento UE 2024/1689</a> · <a href="https://vercel.com/legal/privacy-notice">Informativa Vercel</a></p></div></section>
+<noscript><p class="panel">Attiva JavaScript per consultare le unità e usare i laboratori e il ripasso.</p></noscript>
+</div></main>
+<footer><div class="wrap"><strong>Cellule in equilibrio</strong><p>Liceo Galilei di Verona · Indirizzo sportivo · A cura del prof. Andrea Bertelli</p><a href="#privacy">Privacy, cookie e IA</a> · <a href="#inizio">Torna all’inizio</a></div></footer>
+</body></html>
