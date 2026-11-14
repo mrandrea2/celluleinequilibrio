@@ -305,6 +305,12 @@ function createModel() {
 }
 createModel();
 
+byId("video-cell-lab").addEventListener("click", () => {
+  const cellTab = byId("labs").querySelector(".tabs button");
+  if (cellTab.getAttribute("aria-pressed") !== "true") cellTab.click();
+  cellTab.focus({ preventScroll: true });
+});
+
 const loadVideo = byId("load-video");
 loadVideo.hidden = false;
 loadVideo.addEventListener("click", () => {
