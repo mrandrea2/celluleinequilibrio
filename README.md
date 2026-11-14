@@ -19,7 +19,7 @@ Documentazione Vercel: https://vercel.com/docs/builds/configure-a-build
 
 Completa la verifica editoriale e scientifica con il docente. Per una pubblicazione istituzionale, conferma con la scuola l'uso del logo fornito e completa l'informativa con i dati effettivi del titolare e i contatti, le finalità e basi giuridiche, destinatari, eventuali trasferimenti, conservazione, diritti e recapiti del DPO ove applicabili. I log tecnici e le eventuali misure di protezione dipendono dalla configurazione di hosting e vanno verificati sul deployment. L’app non registra risultati e non chiede informazioni personali. La dichiarazione nel sito segnala l’uso di IA nella preparazione dei contenuti. Mantieni l’attribuzione AIRC e i riferimenti scientifici.
 
-I PDF e il video AIRC restano nelle fonti di partenza. Lo ZIP contiene la rielaborazione originale e il link al portale AIRC, senza redistribuire i materiali originali. Gli esempi numerici e clinici dei laboratori sono inventati.
+Il video rimane ospitato su Google Drive. Il player incorporato contatta Google quando lo studente seleziona «Carica il player». I PDF AIRC restano nelle fonti di partenza. Lo ZIP contiene la rielaborazione originale e il link al portale AIRC, senza redistribuire i materiali originali. Gli esempi numerici e clinici dei laboratori sono inventati.
 
 ## File
 

@@ -304,3 +304,14 @@ function createModel() {
   resize();
 }
 createModel();
+
+const loadVideo = byId("load-video");
+loadVideo.hidden = false;
+loadVideo.addEventListener("click", () => {
+  const frame = document.createElement("iframe");
+  frame.title = "Video Ciclo cellulare e cancro";
+  frame.src = loadVideo.dataset.src;
+  frame.allowFullscreen = true;
+  byId("video-player").replaceChildren(frame);
+  frame.focus();
+}, { once: true });
