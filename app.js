@@ -23,16 +23,26 @@ function tabs(root, items, render, label) {
     render(panel, index);
   }
   select(0);
+  return buttons;
 }
 
-tabs(byId("lessons"), lessons.map((lesson) => lesson.name), (panel, index) => {
+const lessonTabs = tabs(byId("lessons"), lessons.map((lesson) => lesson.name), (panel, index) => {
   const lesson = lessons[index];
   panel.innerHTML = `<h3>${lesson.title}</h3><p>${lesson.intro}</p>
     <div class="scheme" aria-label="Schema concettuale">${lesson.scheme.map((label) => `<strong>${label}</strong>`).join('<span aria-hidden="true">→</span>')}</div>
     <div class="grid">${lesson.tiles.map(([title, copy]) => `<div class="tile"><h3>${title}</h3><p>${copy}</p></div>`).join("")}</div>
     <details><summary>${lesson.more[0]}</summary><p>${lesson.more[1]}</p></details>
+    ${index === 2 ? '<p><a href="#prevention-practice" class="button secondary">Prova a distinguere gli interventi</a></p>' : ""}
     <p class="inline-source">${lesson.refs.map(([id, label]) => `<a href="#fonte-${id}">${label}</a>`).join(" · ")}</p>`;
 }, "Unità di teoria");
+
+document.querySelectorAll("[data-lesson]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const tab = lessonTabs[Number(link.dataset.lesson)];
+    tab.click();
+    tab.focus({ preventScroll: true });
+  });
+});
 
 function feedback(target, message, good = true) {
   target.dataset.kind = good ? "correct" : "retry";
@@ -40,31 +50,49 @@ function feedback(target, message, good = true) {
 }
 
 function challenge(panel, questions, title, description, scored = false) {
+  let queue = questions;
   let index = 0;
-  let points = 0;
+  let missed = [];
+
+  function restart(items) {
+    queue = items;
+    index = 0;
+    missed = [];
+    draw(true);
+  }
+
   function draw(moveFocus = false) {
-    const complete = index === questions.length;
-    if (complete) {
-      const summary = scored ? `Hai risposto correttamente a ${points} domande su ${questions.length}. Scegli una risposta da spiegare domani senza consultare la teoria.` : "Hai completato tutti i casi. Scegli un caso e spiega perché una delle altre risposte non si applica.";
-      panel.innerHTML = `<h3 tabindex="-1">${title} completato</h3><p>${summary}</p><button type="button" class="control">Ricomincia</button>`;
-      panel.querySelector("button").addEventListener("click", () => {
-        index = 0;
-        points = 0;
-        draw(true);
-      });
+    if (index === queue.length) {
+      const summary = scored
+        ? `Risposte corrette: ${queue.length - missed.length} su ${queue.length}.`
+        : "Hai completato tutti i casi. Scegli un caso e spiega a parole tue quale criterio hai usato.";
+      panel.innerHTML = `<h3 tabindex="-1">${title} completato</h3><p>${summary}</p>
+        <div class="lab-controls">
+          ${scored && missed.length ? '<button type="button" class="control retry">Riprova le domande da ripassare</button>' : ""}
+          <button type="button" class="control restart">${scored ? "Ripeti tutto il quiz" : "Ricomincia"}</button>
+        </div>`;
+      panel.querySelector(".retry")?.addEventListener("click", () => restart(missed));
+      panel.querySelector(".restart").addEventListener("click", () => restart(questions));
     } else {
-      const [prompt, choices, correct, explanation] = questions[index];
-      panel.innerHTML = `<h3 tabindex="-1">${title}</h3><p>${description}</p><p><strong>${index + 1} di ${questions.length}</strong> · ${prompt}</p>
-        <div class="choice-list" role="group" aria-label="Risposte">${choices.map((choice) => `<button type="button" class="choice" aria-pressed="false">${choice}</button>`).join("")}</div>
-        <p class="feedback" role="status" tabindex="-1"></p><button type="button" class="control next" hidden>${index + 1 === questions.length ? "Vedi riepilogo" : "Avanti"}</button>`;
+      const [prompt, choices, correct, explanation] = queue[index];
+      panel.innerHTML = `<h3 tabindex="-1">${title}</h3><p>${description}</p>
+        <div class="question-progress"><span>Domanda ${index + 1} di ${queue.length}</span>
+          <progress aria-label="Domande completate" max="${queue.length}" value="${index}"></progress>
+        </div>
+        <p class="question-prompt">${prompt}</p>
+        <div class="choice-list question-choices" role="group" aria-label="Risposte">${choices.map((choice) => `<button type="button" class="choice" aria-pressed="false">${choice}</button>`).join("")}</div>
+        <p class="feedback" role="status" tabindex="-1"></p><button type="button" class="control next" hidden>${index + 1 === queue.length ? "Vedi riepilogo" : "Avanti"}</button>`;
       const options = [...panel.querySelectorAll(".choice")];
       const output = panel.querySelector(".feedback");
       const next = panel.querySelector(".next");
       options.forEach((button, i) => button.addEventListener("click", () => {
         const good = i === correct;
-        if (good) points += 1;
+        if (!good) missed.push(queue[index]);
         button.setAttribute("aria-pressed", "true");
+        if (!good) button.dataset.answer = "incorrect";
+        options[correct].dataset.answer = "correct";
         options.forEach((option) => { option.disabled = true; });
+        panel.querySelector("progress").value = index + 1;
         feedback(output, `${good ? "Corretto." : `Risposta attesa: ${choices[correct]}.`} ${explanation}`, good);
         next.hidden = false;
         output.focus();
@@ -75,6 +103,15 @@ function challenge(panel, questions, title, description, scored = false) {
   }
   draw();
 }
+
+challenge(
+  byId("prevention-practice"),
+  preventionTypes.map(([prompt, correct, explanation]) => [
+    prompt, ["Prevenzione primaria", "Screening", "Follow-up"], correct, explanation
+  ]),
+  "Prima della malattia, diagnosi precoce o dopo le cure?",
+  "Abbina ogni situazione al suo obiettivo."
+);
 
 function cellLab(panel) {
   panel.innerHTML = `<h3>Cellula · Il controllo prima della divisione</h3>
@@ -156,6 +193,16 @@ function screeningLab(panel) {
     <div class="choice-list" role="group" aria-label="Frequenza dell’alterazione">
       <button class="choice" type="button" aria-pressed="false" data-count="10">10 persone su 1.000</button>
       <button class="choice" type="button" aria-pressed="false" data-count="100">100 persone su 1.000</button>
+    </div>
+    <div class="screening-results" hidden>
+      <table>
+        <caption></caption>
+        <thead><tr><th scope="col">Esito del test</th><th scope="col">Con alterazione</th><th scope="col">Senza alterazione</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Positivo</th><td class="true-positive"></td><td class="false-positive"></td></tr>
+          <tr><th scope="row">Negativo</th><td class="false-negative"></td><td class="true-negative"></td></tr>
+        </tbody>
+      </table>
     </div><p class="feedback" role="status"></p><p>I numeri sono inventati per isolare il ruolo della frequenza di partenza. I programmi reali usano test e criteri specifici.</p><p class="inline-source"><a href="#fonte-italia">Fonte · Programmi organizzati in Italia</a></p>`;
   const options = [...panel.querySelectorAll(".choice")];
   options.forEach((button) => button.addEventListener("click", () => {
@@ -165,6 +212,13 @@ function screeningLab(panel) {
     const falsePositives = (1000 - count) * 0.1;
     const total = truePositives + falsePositives;
     const percent = Math.round(100 * truePositives / total);
+    const results = panel.querySelector(".screening-results");
+    results.querySelector("caption").textContent = `Scenario con ${count} persone su 1.000 con l’alterazione`;
+    results.querySelector(".true-positive").textContent = truePositives;
+    results.querySelector(".false-positive").textContent = falsePositives;
+    results.querySelector(".false-negative").textContent = count - truePositives;
+    results.querySelector(".true-negative").textContent = 1000 - count - falsePositives;
+    results.hidden = false;
     feedback(panel.querySelector(".feedback"), `${truePositives} positivi con alterazione e ${falsePositives} senza alterazione. Dei ${total} positivi, circa il ${percent}% ha davvero l’alterazione. Anche a parità di test, la frequenza di partenza cambia il significato del risultato.`);
   }));
 }
@@ -284,6 +338,7 @@ function createModel() {
     toggle.setAttribute("aria-pressed", clone);
     toggle.textContent = clone ? "Mostra cellula" : "Mostra clone";
     byId("model-state").textContent = clone ? "Espansione di un clone" : "Cellula con controlli integri";
+    byId("clone-legend").hidden = !clone;
     canvas.setAttribute("aria-label", clone ? "Modello tridimensionale schematico con una cellula e due cellule figlie del clone" : "Modello tridimensionale schematico di una cellula con membrana, nucleo e materiale genetico");
     draw();
   });

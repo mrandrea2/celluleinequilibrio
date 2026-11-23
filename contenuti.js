@@ -105,3 +105,10 @@ const sources = [
   ["ricerca", "Studi clinici del 2025 · New England Journal of Medicine", [["Cercek et al. Nonoperative Management of Mismatch Repair-Deficient Tumors", "https://doi.org/10.1056/NEJMoa2404512"], ["Courneya et al. Structured Exercise after Adjuvant Chemotherapy for Colon Cancer", "https://doi.org/10.1056/NEJMoa2502760"]], "Immunoterapia in tumori dMMR selezionati ed esercizio strutturato dopo terapia per il tumore del colon, in popolazioni distinte."],
   ["apprendimento", "Scienze cognitive e apprendimento in classe", [["Agarwal et al. (2021), revisione sistematica sul recupero attivo", "https://doi.org/10.1007/s10648-021-09595-9"], ["Meta-analisi (2025) sulla pratica distribuita in classe", "https://pubmed.ncbi.nlm.nih.gov/40564553/"], ["Revisione e meta-analisi (2025) su recupero attivo ed elaborazione", "https://doi.org/10.1007/s10648-025-10076-6"]], "Fondamento delle scelte su domande prima della rilettura, spiegazione e ripassi distanziati."]
 ];
+
+const preventionTypes = [
+  ["Una persona riceve la vaccinazione contro l’HPV quando indicata.", 0, "La vaccinazione riduce il rischio di infezione dai tipi di HPV coperti e delle relative conseguenze."],
+  ["Una persona senza sintomi riceve un invito per lo screening del colon-retto.", 1, "Lo screening cerca alterazioni precoci nella popolazione per cui il programma è raccomandato."],
+  ["Una persona già trattata torna al controllo previsto dal proprio percorso di cura.", 2, "Il follow-up accompagna la persona dopo le cure e può includere controlli degli effetti tardivi e di un’eventuale recidiva."],
+  ["In un edificio si interviene per ridurre l’esposizione al radon.", 0, "Ridurre l’esposizione interviene su un fattore di rischio prima della comparsa della malattia."]
+];

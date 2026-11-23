@@ -19,19 +19,31 @@
 </div></header>
 <main id="contenuto" tabindex="-1">
 <div class="wrap">
-<section id="inizio" class="hero" aria-labelledby="titolo">
-<div class="hero-copy"><p class="eyebrow">Biologia e salute</p><h1 id="titolo">Cellule in<br>equilibrio<span>.</span></h1>
-<p class="lead">Come nasce un tumore? Come si cura? Quali scelte riducono il rischio? Esplora le basi biologiche, le cure e le evidenze sulla prevenzione nella vita quotidiana.</p>
-<div class="actions"><a class="button primary" href="#laboratori">Entra nei laboratori</a><a class="button secondary" href="#percorso">Esplora la teoria</a></div>
+</div>
+<section id="inizio" class="hero-band" aria-labelledby="titolo">
+<div class="wrap hero">
+<div class="hero-copy"><p class="eyebrow">Biologia dei tumori e prevenzione</p><h1 id="titolo">Cellule in<br>equilibrio<span>.</span></h1>
+<p class="lead">Come nasce un tumore? Esplora il ciclo cellulare, confronta le strategie di cura e scopri come si riduce il rischio nella vita quotidiana.</p>
+<div class="actions"><a class="button primary" href="#percorso">Esplora il percorso</a><a class="button secondary" href="#laboratori">Prova i laboratori</a></div>
 <p class="credit">A cura del prof. Andrea Bertelli · Materiali di partenza di Fondazione AIRC</p></div>
 <div class="visual"><div class="visual-head"><span>MODELLO 3D · CELLULA</span><span id="model-state">Cellula con controlli integri</span></div>
 <canvas id="cell" role="img" aria-label="Modello tridimensionale schematico di una cellula con membrana, nucleo e materiale genetico">Cellula schematica con membrana, nucleo e materiale genetico.</canvas>
-<div class="visual-controls"><button id="turn-left" aria-label="Ruota a sinistra">↶</button><button id="turn-right" aria-label="Ruota a destra">↷</button><button id="spin" aria-pressed="false">Avvia rotazione</button><button id="model-switch" aria-pressed="false">Mostra clone</button></div><p>Trascina per ruotare · Schema illustrativo, fuori scala</p></div>
-</section>
+<div class="visual-controls"><button id="turn-left" aria-label="Ruota a sinistra">↶</button><button id="turn-right" aria-label="Ruota a destra">↷</button><button id="spin" aria-pressed="false">Avvia rotazione</button><button id="model-switch" aria-pressed="false">Mostra clone</button></div><p>Trascina per ruotare · Schema illustrativo, fuori scala</p>
+<ul class="model-legend" aria-label="Legenda del modello">
+  <li><i class="swatch membrane"></i>Membrana</li><li><i class="swatch nucleus"></i>Nucleo</li><li><i class="swatch dna"></i>DNA</li>
+  <li id="clone-legend" hidden><i class="swatch clone-swatch"></i>Cellule del clone</li>
+</ul></div>
+</div></section>
+<div class="wrap">
+<nav class="routes" aria-label="Esplora i temi">
+  <a class="route" href="#percorso" data-lesson="0"><span>Biologia</span><strong>Come nasce un tumore?</strong><small>DNA, ciclo cellulare e metastasi</small></a>
+  <a class="route" href="#percorso" data-lesson="1"><span>Cure</span><strong>Come si sceglie una cura?</strong><small>Diagnosi, stadio e terapie</small></a>
+  <a class="route" href="#percorso" data-lesson="2"><span>Prevenzione</span><strong>Come si riduce il rischio?</strong><small>Esposizioni, vaccini e screening</small></a>
+</nav>
 <aside class="fact"><strong>37<span>%</span></strong><div><h2>Una stima mondiale della quota prevenibile</h2><p>Nel 2022, circa 37 nuovi casi su 100 nel mondo erano attribuibili ai fattori modificabili esaminati da OMS e IARC. È una stima di popolazione. Il rischio di una singola persona dipende da molti fattori.</p><a href="#fonte-stima">Studio pubblicato nel 2026</a></div></aside>
-<section id="percorso" class="section"><div class="section-head"><p class="eyebrow">Teoria e schemi</p><h2>Dal DNA alla salute</h2><p>Leggi a blocchi, poi prova a ricostruire il processo usando lo schema.</p></div><div id="lessons"></div></section>
+<section id="percorso" class="section"><div class="section-head"><p class="eyebrow">Teoria e schemi</p><h2>Dal DNA alla salute</h2><p>Leggi a blocchi, poi prova a ricostruire il processo usando lo schema.</p></div><div id="lessons"></div><div id="prevention-practice" class="panel"></div></section>
 <section id="laboratori" class="section"><div class="section-head"><p class="eyebrow">Laboratori</p><h2>Fai un’ipotesi. Mettila alla prova.</h2><p>Usa scenari inventati e confronta le tue risposte con la spiegazione.</p></div><div id="labs"></div></section>
-<section id="ripasso" class="section"><div class="section-head"><p class="eyebrow">Ripasso attivo</p><h2>Che cosa riesci a ricordare?</h2><p>Rispondi prima di riaprire la teoria. Torna su queste domande domani e la settimana prossima, spiegando a voce il perché.</p></div><div id="review" class="panel"></div><details class="panel"><summary>Carte di richiamo e attività in coppia</summary><div id="cards"></div><p>In coppia, una persona spiega un concetto per 45 secondi. L’altra propone un esempio e segnala un passaggio da chiarire. Poi scambiate i ruoli.</p></details></section>
+<section id="ripasso" class="section"><div class="section-head"><p class="eyebrow">Ripasso attivo</p><h2>Che cosa riesci a ricordare?</h2><p>Rispondi senza consultare la teoria. Alla fine puoi riprovare solo le domande da ripassare.</p></div><div id="review" class="panel"></div><details class="panel"><summary>Carte di richiamo</summary><div id="cards"></div></details></section>
 <section id="video" class="section video-section" aria-labelledby="video-title">
   <div class="video-intro">
     <p class="eyebrow">Video didattico</p>
