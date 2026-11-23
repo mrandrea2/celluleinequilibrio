@@ -129,7 +129,7 @@ function cellLab(panel) {
 }
 
 function menuLab(panel) {
-  panel.innerHTML = `<h3>Spogliatoio · Una trasferta dopo scuola</h3><p>Componi un pasto abituale che una squadra potrebbe organizzare. Spiega poi come adatteresti orari e porzioni al contesto.</p>
+  panel.innerHTML = `<h3>Alimentazione · Le scelte abituali</h3><p>Confronta alcune scelte alimentari abituali e individua quelle coerenti con le raccomandazioni sulla prevenzione oncologica.</p>
   <form>${menuChoices.map(([label, choices], group) => `<fieldset><legend>${label}</legend>${choices.map(([choice, fits]) => `<label class="checkline"><input type="radio" name="group-${group}" value="${fits}" required> ${choice}</label>`).join("")}</fieldset>`).join("")}
   <button class="control" type="submit">Confronta con le evidenze</button> <button class="control" type="reset">Azzera</button>
   <p class="feedback" role="status"></p></form><p class="inline-source"><a href="#fonte-alimentazione">Fonte · Raccomandazioni WCRF</a></p>`;
@@ -170,7 +170,7 @@ function screeningLab(panel) {
 }
 
 let stopLab = null;
-tabs(byId("labs"), ["Cellula", "Casi di cura", "Sfida prevenzione", "Pasto in trasferta", "Screening"], (panel, index) => {
+tabs(byId("labs"), ["Cellula", "Casi di cura", "Sfida prevenzione", "Scelte alimentari", "Screening"], (panel, index) => {
   if (stopLab) stopLab();
   stopLab = null;
   if (index === 0) stopLab = cellLab(panel);

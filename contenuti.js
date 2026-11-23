@@ -32,23 +32,23 @@ const lessons = [
     intro: "La prevenzione primaria interviene sulle esposizioni e sulle infezioni prima della malattia. Lo screening cerca alterazioni precoci nelle persone senza sintomi e nelle fasce per cui è raccomandato. Dopo la diagnosi entrano in gioco follow-up, riabilitazione e supporto. Il rischio riguarda anche l’ambiente e l’accesso ai servizi. Una diagnosi non è una colpa.",
     scheme: ["Ridurre esposizioni", "Vaccinare quando indicato", "Aderire agli inviti di screening"],
     tiles: [
-      ["Tabacco, alcol e sole", "Evitare il tabacco e il fumo passivo. Per la prevenzione oncologica è preferibile evitare l’alcol, anche se si tratta di vino o birra. Per gli sport all’aperto, usare ombra, indumenti, cappello e protezione solare, evitando lampade abbronzanti."],
+      ["Tabacco, alcol e sole", "Evitare il tabacco e il fumo passivo. Per la prevenzione oncologica è preferibile evitare l’alcol, anche se si tratta di vino o birra. Quando si trascorre tempo all’aperto, usare ombra, indumenti, cappello e protezione solare, evitando lampade abbronzanti."],
       ["Infezioni e vaccini", "La vaccinazione contro HPV riduce il rischio di tumori legati ai tipi virali coperti. La vaccinazione contro epatite B previene un’infezione che può causare tumore al fegato. Per indicazioni e accesso consultare i servizi vaccinali. Lo screening cervicale rimane rilevante secondo il programma previsto anche per chi è vaccinato."],
       ["Screening organizzati", "In Italia ci sono programmi organizzati per mammella, cervice uterina e colon-retto. Età, intervalli e modalità dipendono dal programma e dal territorio. Un risultato positivo richiede approfondimenti. Falsi positivi, falsi negativi e sovradiagnosi aiutano a capire perché si scelgono popolazioni e test precisi."],
-      ["Contesto e salute pubblica", "Spazi senza fumo, accesso ai vaccini, percorsi sicuri per muoversi, ombra negli impianti sportivi e protezione sul lavoro rendono praticabili molte scelte. Anche esposizioni come radon e inquinamento richiedono interventi ambientali e istituzionali."]
+      ["Contesto e salute pubblica", "Spazi senza fumo, accesso ai vaccini, percorsi sicuri per muoversi, ombra negli spazi pubblici e protezione sul lavoro rendono praticabili molte scelte. Anche esposizioni come radon e inquinamento richiedono interventi ambientali e istituzionali."]
     ],
     more: ["Screening e diagnosi precoce sono sinonimi?", "Lo screening si rivolge a persone senza sintomi. La diagnosi precoce comprende anche il riconoscimento e la valutazione tempestiva di sintomi. Uno screening ha un bilancio tra benefici e possibili danni che dipende dal contesto."],
     refs: [["europa", "IARC · Codice europeo, 5ª edizione"], ["italia", "Ministero della Salute e ULSS 9"]]
   },
   {
-    name: "Alimentazione e sport", title: "Le abitudini contano nel tempo",
+    name: "Alimentazione e movimento", title: "Le abitudini contano nel tempo",
     intro: "Le evidenze riguardano soprattutto abitudini e contesti ripetuti nel tempo. Per il tumore del colon-retto il WCRF collega cereali integrali e fibre a un rischio minore, e carni lavorate a un rischio maggiore. L’attività fisica è associata a un rischio minore di alcuni tumori, tra cui quello del colon. Gli studi stimano effetti in gruppi di persone.",
     scheme: ["Pasti vari e ricchi di vegetali", "Movimento regolare", "Meno tempo sedentario"],
     tiles: [
-      ["Un modello alimentare pratico", "Alterna legumi, cereali integrali, frutta e verdura. Limita carni lavorate come salumi e riduci il consumo di carne rossa. Acqua come bevanda abituale. Un esempio per la trasferta è un panino integrale con hummus e verdure, frutta e acqua, adattato a necessità e orari."],
+      ["Un modello alimentare pratico", "Alterna legumi, cereali integrali, frutta e verdura. Limita carni lavorate come salumi e riduci il consumo di carne rossa. Acqua come bevanda abituale."],
       ["Cosa dire sui miti", "Lo zucchero nel sangue viene usato anche dalle cellule sane. Escludere i carboidrati non è una cura oncologica. Integratori e superfood non sostituiscono un’alimentazione varia né le cure. Eventuali necessità nutrizionali cliniche si valutano con il team curante."],
-      ["Muoversi, anche fuori dall’allenamento", "Per i 5–17 anni l’OMS indica una media di almeno 60 minuti al giorno di attività da moderata a vigorosa, perlopiù aerobica, nella settimana. Attività vigorose e di rinforzo di muscoli e ossa almeno 3 giorni a settimana. Camminare, pedalare e giocare contribuiscono. Il riferimento OMS riguarda la salute generale."],
-      ["Dal campo alla ricerca", "Nel trial CHALLENGE, pubblicato nel 2025, un programma strutturato di esercizio dopo la chemioterapia adiuvante in persone selezionate con tumore del colon operato ha migliorato la sopravvivenza libera da malattia. Riguarda il periodo dopo le cure in quella popolazione, distinto dalla prevenzione primaria."]
+      ["Il movimento nella vita quotidiana", "Per i 5–17 anni l’OMS indica una media di almeno 60 minuti al giorno di attività da moderata a vigorosa, perlopiù aerobica, nella settimana. Attività vigorose e di rinforzo di muscoli e ossa almeno 3 giorni a settimana. Camminare, pedalare e giocare contribuiscono. Il riferimento OMS riguarda la salute generale."],
+      ["Attività fisica e ricerca clinica", "Nel trial CHALLENGE, pubblicato nel 2025, un programma strutturato di esercizio dopo la chemioterapia adiuvante in persone selezionate con tumore del colon operato ha migliorato la sopravvivenza libera da malattia. Riguarda il periodo dopo le cure in quella popolazione, distinto dalla prevenzione primaria."]
     ],
     more: ["Perché non basta uno studio su un alimento?", "Conta come è stato misurato il consumo, con cosa viene sostituito quell’alimento, chi è stato studiato e quale esito è stato misurato. Le raccomandazioni sintetizzano più studi e considerano la coerenza delle prove."],
     refs: [["alimentazione", "WCRF · Alimentazione e movimento"], ["oms", "OMS · Attività fisica"], ["ricerca", "Courneya et al. · NEJM 2025"]]
@@ -63,7 +63,7 @@ const clinical = [
 ];
 
 const prevention = [
-  ["Partita estiva. Il torneo si gioca alle ore di maggiore irraggiamento. Quale misura riduce meglio l’esposizione UV?", ["Offrire solo più acqua", "Spostare l’orario e prevedere ombra e protezione solare", "Fare meno riscaldamento"], 1, "Orario, ombra, abbigliamento e protezione solare riducono l’esposizione ai raggi UV. L’acqua serve per l’idratazione."],
+  ["Una persona trascorre molto tempo all’aperto in estate. Quale misura riduce meglio l’esposizione UV?", ["Bere soltanto più acqua", "Scegliere orari meno esposti e usare ombra, indumenti e protezione solare", "Affidarsi soltanto alla presenza di nuvole"], 1, "Orario, ombra, abbigliamento e protezione solare riducono l’esposizione ai raggi UV. L’acqua serve per l’idratazione."],
   ["Il servizio sanitario invita una persona asintomatica a un programma per il colon-retto. Di che cosa si tratta?", ["Screening organizzato", "Prevenzione primaria", "Terapia adiuvante"], 0, "Lo screening cerca precocemente alterazioni in una popolazione bersaglio. Un esito positivo richiede un approfondimento."],
   ["La scuola spiega come accedere alla vaccinazione anti-HPV. Quale livello di prevenzione rappresenta?", ["Diagnosi di tumore", "Follow-up", "Prevenzione primaria"], 2, "La vaccinazione agisce prima della malattia riducendo la probabilità di infezioni da tipi di HPV coperti e delle relative conseguenze."],
   ["Un post dice che il 37% indica il rischio personale di avere un tumore. Come lo correggi?", ["È una stima di popolazione dei casi attribuibili ai fattori studiati", "È il rischio di tutti gli adolescenti", "È la probabilità di guarigione"], 0, "La stima OMS/IARC riguarda la quota dei nuovi casi mondiali attribuibili a fattori modificabili esaminati nel 2022."]
@@ -82,7 +82,7 @@ const quiz = [
   ["Quale scelta rispecchia meglio le raccomandazioni alimentari?", ["Contare su un superfood", "Varietà di vegetali, legumi e cereali integrali", "Usare integratori al posto dei pasti"], 1, "Il WCRF raccomanda un modello abituale ricco di vegetali e fibre."],
   ["Un test di screening positivo indica…", ["Una diagnosi già confermata", "Che il programma non funziona", "La necessità di approfondire"], 2, "Il test identifica chi può beneficiare degli approfondimenti. Questi chiariscono il significato del risultato."],
   ["Qual è un esempio di prevenzione primaria?", ["Vaccinazione anti-HPV quando indicata", "Biopsia dopo un esame sospetto", "Follow-up dopo terapia"], 0, "La vaccinazione agisce prima dell’insorgenza della malattia."],
-  ["Che cosa insegna il trial CHALLENGE?", ["L’esercizio evita qualunque tumore", "Un programma strutturato ha dato benefici nella popolazione studiata dopo le cure", "Lo sport sostituisce la chemioterapia"], 1, "Il trial riguarda pazienti selezionati con tumore del colon operato e chemioterapia adiuvante completata."],
+  ["Che cosa insegna il trial CHALLENGE?", ["L’esercizio evita qualunque tumore", "Un programma strutturato ha dato benefici nella popolazione studiata dopo le cure", "Il movimento sostituisce la chemioterapia"], 1, "Il trial riguarda pazienti selezionati con tumore del colon operato e chemioterapia adiuvante completata."],
   ["Perché due persone con tumore nello stesso organo possono ricevere terapie diverse?", ["Le terapie si scelgono a sorte", "L’organo decide da solo", "Tipo, stadio, biomarcatori e condizioni della persona possono variare"], 2, "La pianificazione si fonda sulle caratteristiche della malattia e della persona."]
 ];
 
@@ -90,7 +90,7 @@ const cards = [
   ["Spiega a un compagno il ruolo di un checkpoint.", "È un controllo del ciclo cellulare che può arrestare la progressione, per esempio in presenza di un danno al DNA."],
   ["Fai un esempio di prevenzione primaria e uno di screening.", "Vaccinazione anti-HPV quando indicata. Invito a un test organizzato per la cervice nelle fasce previste."],
   ["Qual è la differenza tra terapia mirata e immunoterapia con inibitori dei checkpoint?", "La prima sfrutta una vulnerabilità biologica specifica. La seconda può ridurre i segnali che frenano l’attività delle difese immunitarie."],
-  ["Come spieghi il 37% a una squadra?", "È una stima globale su nuovi casi e fattori modificabili studiati. Non è il rischio personale di ciascun atleta."]
+  ["Come spieghi il significato della stima del 37%?", "È una stima globale su nuovi casi e fattori modificabili studiati. Il rischio personale richiede una valutazione individuale."]
 ];
 
 const sources = [

@@ -23,7 +23,7 @@ Il video rimane ospitato su Google Drive. Il player incorporato contatta Google 
 
 ## File
 
-- `index.html` struttura, guida docente e privacy
+- `index.html` struttura, approfondimenti e privacy
 - `style.css` impaginazione e accessibilità visiva
 - `contenuti.js` unità, casi, domande e riferimenti
 - `app.js` laboratori, quiz e modello 3D
